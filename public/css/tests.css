@@ -1,0 +1,391 @@
+/* General Styles */
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #005F73, #0A9396); /* Modern gradient */
+    padding: 15px 40px;
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo */
+.navbar .logo {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Menu Toggle (For Mobile View) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: linear-gradient(90deg, #005F73, #0A9396);
+        width: 220px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #fff;
+    }
+
+    .menu-toggle:hover {
+        transform: rotate(90deg);
+    }
+}
+
+/* Search & Filter Section */
+.filter-section {
+    background: linear-gradient(to right, #005aa7, #fffde4);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+/* Search & Filters */
+.filter-search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+/* Input Fields & Select */
+.filter-search input,
+.filter-search select {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+/* Input Field */
+.filter-search input {
+    width: 260px;
+}
+
+/* Select Dropdown */
+.filter-search select {
+    width: 190px;
+}
+
+/* Focus Effect */
+.filter-search input:focus,
+.filter-search select:focus {
+    outline: none;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .filter-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .filter-search {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .filter-search input {
+        width: 100%;
+    }
+
+    .filter-search select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-search {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-section {
+        padding: 10px;
+    }
+
+    .filter-search input,
+    .filter-search select {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
+/* Tests Section */
+/* Tests Section */
+.tests {
+    padding: 40px 20px;
+    text-align: center;
+    background: linear-gradient(to right, #106C89, #fffde4);
+}
+
+/* Test Container */
+.test-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center align items */
+    max-width: 900px; /* Restrict width */
+    margin: auto;
+    padding: 20px;
+    min-height: 400px; /* Ensure a minimum height */
+    align-items: center; /* Align items in center when few are present */
+}
+
+
+/* Test Card */
+.test-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    min-width: 250px;
+    flex: 1 1 calc(33.33% - 20px); /* Default: 3 in a row */
+    max-width: 300px;
+}
+
+/* Hover Effect */
+.test-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.test-card h3 {
+    margin-bottom: 10px;
+    color: #004d99;
+}
+
+/* Description */
+.test-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Test Details */
+.test-details {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.test-details span {
+    display: block;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Book Button */
+.book-btn {
+    background: #106C89;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.book-btn:hover {
+    background: #004d99;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .test-card {
+        flex: 1 1 calc(50% - 20px); /* 2 in a row */
+    }
+}
+
+@media (max-width: 768px) {
+    .test-card {
+        flex: 1 1 100%; /* 1 in a row */
+        max-width: 300px; /* Keeps card size */
+    }
+}
+
+
+
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* Footer Content */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Social Icons Styling */
+.social-icons a {
+    color: white;
+    font-size: 22px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.social-icons a:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+
+/* Footer Links */
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Copyright */
+.footer-bottom {
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-links a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 20px;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-links {
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,649 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #005F73, #0A9396); /* Modern gradient */
+    padding: 15px 40px;
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo */
+.navbar .logo {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Menu Toggle (For Mobile View) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: linear-gradient(90deg, #005F73, #0A9396);
+        width: 220px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #fff;
+    }
+
+    .menu-toggle:hover {
+        transform: rotate(90deg);
+    }
+}
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    background: url('https://source.unsplash.com/1600x900/?medical,lab') no-repeat center center/cover;
+    color: white;
+    padding: 140px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark Gradient Overlay for Better Readability */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 60, 90, 0.7), rgba(0, 0, 0, 0.7)); /* Modern gradient */
+}
+
+/* Ensure text is visible above overlay */
+.hero h1,
+.hero p,
+.cta-btn {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Heading */
+.hero h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hero Description */
+.hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Call-to-Action Button */
+.cta-btn {
+    background: #FFD700; /* Gold color for a premium feel */
+    color: #222;
+    padding: 14px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.4);
+}
+
+.cta-btn:hover {
+    background: #FFC107; /* Slightly darker yellow */
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 100px 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .cta-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        padding: 80px 10px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+
+/* Popular Tests Section */
+.popular-tests {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f8f9fa; /* Light background for contrast */
+}
+
+/* Section Heading */
+.popular-tests h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #106C89; /* Match the theme */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Test List */
+.test-list {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Test Card */
+.test-card {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width: 260px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.test-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Test Card Icon */
+.test-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+/* Test Card Title */
+.test-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+/* Test Card Description */
+.test-card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .popular-tests h2 {
+        font-size: 28px;
+    }
+
+    .test-card {
+        width: 220px;
+        padding: 15px;
+    }
+
+    .test-card h3 {
+        font-size: 18px;
+    }
+
+    .test-card p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popular-tests h2 {
+        font-size: 24px;
+    }
+
+    .test-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .test-card {
+        width: 90%;
+        padding: 18px;
+    }
+}
+
+
+/* FAQ Section */
+.faq {
+    padding: 60px 20px;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Section Heading */
+.faq h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #106C89; /* Match your theme */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Individual FAQ Item */
+.faq-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ Question */
+.question {
+    background: #007bff;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.question:hover {
+    background: #0056b3;
+}
+
+/* Icon Transition */
+.question i {
+    transition: transform 0.3s;
+}
+
+/* FAQ Answer */
+.answer {
+    display: none;
+    background: white;
+    padding: 15px;
+    border-left: 4px solid #007bff;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Active Answer */
+.answer.visible {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Rotate Icon When Open */
+.rotate {
+    transform: rotate(180deg);
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .faq h2 {
+        font-size: 28px;
+    }
+
+    .question {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+
+    .answer {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .faq h2 {
+        font-size: 24px;
+    }
+
+    .question {
+        font-size: 15px;
+        padding: 10px 16px;
+    }
+
+    .answer {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
+
+
+/* Lab Partners Section */
+.lab-partners {
+    background: linear-gradient(to right, #005aa7, #fffde4);
+    padding: 30px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Marquee Wrapper */
+.marquee {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Marquee Content */
+.marquee-content {
+    display: flex;
+    animation: marquee 20s linear infinite;
+}
+
+/* Individual Lab Partner */
+.lab {
+    display: flex;
+    align-items: center;
+    margin: 0 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Lab Partner Logos */
+.lab img {
+    height: 50px;
+    max-width: 120px;
+    object-fit: contain;
+    margin-right: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect for Logos */
+.lab:hover img {
+    transform: scale(1.1);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Duplicate Content for Seamless Loop */
+.marquee-content::after {
+    content: "";
+    display: flex;
+    animation: marquee 20s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .lab-partners {
+        padding: 25px 0;
+    }
+
+    .lab {
+        font-size: 16px;
+    }
+
+    .lab img {
+        height: 45px;
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lab-partners {
+        padding: 20px 0;
+    }
+
+    .lab {
+        font-size: 14px;
+        margin: 0 15px;
+    }
+
+    .lab img {
+        height: 40px;
+        max-width: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lab-partners {
+        padding: 15px 0;
+    }
+
+    .lab {
+        font-size: 12px;
+        margin: 0 10px;
+    }
+
+    .lab img {
+        height: 35px;
+        max-width: 80px;
+    }
+}
+
+
+
+
+
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* Footer Content */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Social Icons Styling */
+.social-icons a {
+    color: white;
+    font-size: 22px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.social-icons a:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+
+/* Footer Links */
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Copyright */
+.footer-bottom {
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-links a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 20px;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-links {
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
